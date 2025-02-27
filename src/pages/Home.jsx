@@ -1,8 +1,8 @@
+import ToTopBtn from "../components/toTopBtn/ToTopBtn";
+
 const Home = () => {
   return (
-    <section>
-      <div></div>
-    </section>
+    <ToTopBtn/>
   );
 };
 

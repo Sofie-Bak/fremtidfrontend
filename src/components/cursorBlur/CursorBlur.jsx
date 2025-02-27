@@ -7,10 +7,10 @@ export default function CursorBlur() {
   useEffect(() => {
     const moveCursor = (e) => {
       gsap.to(cursorRef.current, {
-        x: e.clientX - 150, // Center the blur effect
+        x: e.clientX - 150, // Centers on cursor by picking half of the w and h of the div. 
         y: e.clientY - 150,
-        duration: 0.2, // Smooth timing
-        ease: "power2.out", // Natural ease
+        duration: 0.3, // Delays the following to make its feel smoother and fluid.
+        ease: "power2.out", // changes ease to whatever feels best from gsap.
       });
     };
     window.addEventListener("mousemove", moveCursor);
@@ -21,7 +21,7 @@ export default function CursorBlur() {
   return (
     <div
       ref={cursorRef}
-      className="fixed z-50 top-0 left-0 w-[300px] h-[300px] bg-sky-900 opacity-50 blur-[100px] rounded-full pointer-events-none mix-blend-difference"
+      className="fixed z-50 top-0 left-0 w-[300px] h-[300px] bg-sky-900 opacity-50 blur-[100px] rounded-full pointer-events-none mix-blend-screen"
     />
   );
 }

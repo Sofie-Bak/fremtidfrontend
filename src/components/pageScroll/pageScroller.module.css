@@ -1,0 +1,134 @@
+.container {
+  position: relative;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+/* Each section takes full viewport height and snaps to start */
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content styling inside each section */
+.content {
+  text-align: center;
+  z-index: 1;
+}
+
+/* Background overlays with low opacity */
+.background1 {
+  background: linear-gradient(
+    rgba(2, 255, 242, 0.288),
+    rgba(0, 255, 242, 0.158)
+  );
+}
+.background2 {
+  background: linear-gradient(
+    rgba(0, 255, 242, 0.158),
+    rgba(16, 139, 255, 0.075)
+  );
+}
+.background3 {
+  background: linear-gradient(
+    rgba(16, 139, 255, 0.075),
+    rgba(76, 0, 255, 0.158)
+  );
+}
+.background4 {
+  background: linear-gradient(
+    rgba(76, 0, 255, 0.158),
+    rgba(66, 21, 71, 0.363)
+  );
+}
+.background5 {
+  background: linear-gradient(
+    rgba(66, 21, 71, 0.363),
+    rgba(255, 0, 85, 0.288)
+  );
+}
+
+/* Sidebar styles for dots and arrows */
+.sidebar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+/* Each dot container */
+.dotWrapper {
+  position: relative;
+}
+
+/* Dot link styling */
+.dotLink {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Dot style */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.39);
+  pointer-events: auto;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+/* Active dot style */
+.activeDot {
+  background: rgb(255, 255, 255);
+}
+
+/* Sidebar label that appears on hover */
+.sidebarLabel {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show label on hover of the dot wrapper */
+.dotWrapper:hover .sidebarLabel {
+  opacity: 1;
+}
+
+/* Navigation arrow styling */
+.navArrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: gray;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Arrow hover effect */
+.navArrow:hover {
+  background: rgb(255, 255, 255);
+  color: black;
+}

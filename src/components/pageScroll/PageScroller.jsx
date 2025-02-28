@@ -1,21 +1,43 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, Element } from "react-scroll";
 import styles from "./pageScroller.module.css";
+import GlowCards from "../glowCards/GlowCards";
+import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 const PageScroller = () => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  // sections array to include title, content, and buttonLink
   const sections = [
-    "Section 1",
-    "Section 2",
-    "Section 3",
-    "Section 4",
-    "Section 5",
+    {
+      title: "AI's rolle i webudvikling i dag",
+      content:
+        "Here's the text you want to display for section 1.",
+      buttonLink: "/page1",
+    },
+    {
+      title: "Fordele ved AI for webudviklere",
+      content:
+        "Content for Section 2. Here's the text you want to display for section 2.",
+      buttonLink: "/page2",
+    },
+    {
+      title: "Ulemper ved AI i webudvikling",
+      content:
+        "Content for Section 3. Here's the text you want to display for section 3.",
+      buttonLink: "/page3",
+    },
+    {
+      title: "Hvordan AI kan ændre webudvikling i fremtiden",
+      content:
+        "Content for Section 4. Here's the text you want to display for section 4.",
+      buttonLink: "/page4",
+    },
   ];
 
-  // We'll store refs to each section's content
   const sectionRefs = useRef([]);
 
-  // This function adds refs to our array.
   const addToRefs = (el) => {
     if (el && !sectionRefs.current.includes(el)) {
       sectionRefs.current.push(el);
@@ -30,7 +52,6 @@ const PageScroller = () => {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Find the index of the intersecting element.
           const index = sectionRefs.current.indexOf(entry.target);
           if (index !== -1) {
             setCurrentPage(index + 1);
@@ -51,7 +72,6 @@ const PageScroller = () => {
   }, []);
 
   return (
-    // Scrolling container with an ID for react-scroll links
     <div id="scroll-container" className={styles.container}>
       {/* Sidebar with Navigation Dots & Arrows */}
       <div className={styles.sidebar}>
@@ -66,7 +86,7 @@ const PageScroller = () => {
           }}
           className={styles.navArrow}
         >
-          ↑
+          <IoIosArrowUp />
         </Link>
 
         {/* Navigation Dots with Labels */}
@@ -85,7 +105,7 @@ const PageScroller = () => {
                 }`}
               ></div>
             </Link>
-            <span className={styles.sidebarLabel}>{section}</span>
+            <span className={styles.sidebarLabel}>{section.title}</span>
           </div>
         ))}
 
@@ -100,7 +120,7 @@ const PageScroller = () => {
           }}
           className={styles.navArrow}
         >
-          ↓
+          <IoIosArrowDown />
         </Link>
       </div>
 
@@ -113,13 +133,8 @@ const PageScroller = () => {
         >
           {/* Wrap content in a div with a ref for intersection observer */}
           <div ref={addToRefs} className={styles.content}>
-            <h2>{section}</h2>
-            <p>Content for {section}. You can write about your subject here.</p>
-            <button
-              onClick={() => (window.location.href = `/page${index + 1}`)}
-            >
-              Go to Page {index + 1}
-            </button>
+            <GlowCards title={section.title} content={section.content} />
+            {/* Dynamically link the button */}
           </div>
         </Element>
       ))}

@@ -2,7 +2,9 @@ import ToTopBtn from "../components/toTopBtn/ToTopBtn";
 
 const Home = () => {
   return (
-    <ToTopBtn/>
+    <>
+      <ToTopBtn/>
+    </>
   );
 };
 

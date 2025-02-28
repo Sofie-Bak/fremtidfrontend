@@ -1,0 +1,102 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 50vh;
+  --card-width: calc(var(--card-height) / 0.4);
+}
+
+.card {
+  background: #0e242af4;
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+  h2 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px white;
+  }
+  p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 15px;
+  }
+}
+
+.cardContent {
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+
+.card:hover:before,
+.card:hover:after {
+  animation: none;
+}
+
+.card::before {
+  content: "";
+  width: 100.4%;
+  height: 101%;
+  background-image: linear-gradient(
+    var(--rotate),
+    #2dd2cf,
+    #b1f9ff 43%,
+    #ffffff
+  );
+  position: absolute;
+  z-index: -1;
+  top: -0.5%;
+  left: -0.2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #2dd2cf,
+    #27b4c1 43%,
+    #17b17b
+  );
+  opacity: 1;
+  transition: opacity 2s;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}

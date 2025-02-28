@@ -21,7 +21,7 @@ export default function CursorBlur() {
   return (
     <div
       ref={cursorRef}
-      className="fixed z-50 top-0 left-0 w-[300px] h-[300px] bg-sky-900 opacity-50 blur-[100px] rounded-full pointer-events-none mix-blend-screen"
+      className="fixed top-0 left-0 w-[300px] h-[300px] bg-cyan-900 opacity-50 blur-[100px] rounded-full pointer-events-none mix-blend-screen"
     />
   );
 }

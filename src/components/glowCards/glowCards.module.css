@@ -10,7 +10,21 @@
 }
 
 .card {
-  background: #0e242af4;
+  background-color: #0e242af4;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0) 2px,
+      transparent 30px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
   position: relative;
   width: var(--card-width);
   height: var(--card-height);
@@ -22,7 +36,6 @@
   display: flex;
   font-size: 1.5em;
   color: white;
-  cursor: pointer;
   h2 {
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -44,12 +57,6 @@
   gap: 1em;
   align-items: center;
   font-size: 1.2em;
-}
-
-
-.card:hover:before,
-.card:hover:after {
-  animation: none;
 }
 
 .card::before {

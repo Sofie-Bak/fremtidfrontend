@@ -12,9 +12,8 @@ const PageScroller = () => {
   const sections = [
     {
       title: "AI's rolle i webudvikling i dag",
-      content:
-        "Here's the text you want to display for section 1.",
-      buttonLink: "/page1",
+      content: "Here's the text you want to display for section 1.",
+      buttonLink: "/aiRole",
     },
     {
       title: "Fordele ved AI for webudviklere",
@@ -133,8 +132,11 @@ const PageScroller = () => {
         >
           {/* Wrap content in a div with a ref for intersection observer */}
           <div ref={addToRefs} className={styles.content}>
-            <GlowCards title={section.title} content={section.content} />
-            {/* Dynamically link the button */}
+            <GlowCards
+              title={section.title}
+              content={section.content}
+              buttonLink={section.buttonLink}
+            />
           </div>
         </Element>
       ))}

@@ -86,64 +86,6 @@ strong {
   background: #53f8fe;
 }
 
-.stars {
-  position: relative;
-  background: transparent;
-  width: 25rem;
-  height: 50rem;
-  will-change: transform;
-}
-
-.stars::after {
-  content: "";
-  position: absolute;
-  top: -10rem;
-  left: -2rem;
-  width: 100%;
-  height: 100%;
-  animation: animStarRotate 10s linear infinite;
-}
-
-.stars::after {
-  background-image: radial-gradient(#ffffff 1px, transparent 1%);
-  background-size: 50px 50px;
-}
-
-.stars::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 100%;
-  height: 100%;
-  animation: animStar 10s linear infinite;
-}
-
-.stars::before {
-  background-image: radial-gradient(#ffffff 1px, transparent 1%);
-  background-size: 50px 50px;
-  opacity: 0.5;
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-10rem);
-  }
-}
-
-@keyframes animStarRotate {
-  from {
-    transform: rotate(15deg);
-  }
-
-  to {
-    transform: translateY(-20rem);
-  }
-}
 
 @keyframes gradient_301 {
   0% {

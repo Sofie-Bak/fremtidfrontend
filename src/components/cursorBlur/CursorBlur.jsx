@@ -9,7 +9,7 @@ export default function CursorBlur() {
       gsap.to(cursorRef.current, {
         x: e.clientX - 150, // Centers on cursor by picking half of the w and h of the div. 
         y: e.clientY - 150,
-        duration: 0.3, // Delays the following to make its feel smoother and fluid.
+        duration: 0.2, // Delays the following to make its feel smoother and fluid.
         ease: "power2.out", // changes ease to whatever feels best from gsap.
       });
     };

@@ -5,7 +5,6 @@ const GlowBtn = () => {
     <button type="button" className={styles.btn}>
       <strong>LÆS MERE</strong>
       <div className={styles.containerStars}>
-        <div className={styles.stars}></div>
       </div>
 
       <div className={styles.glow}>

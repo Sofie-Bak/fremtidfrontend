@@ -1,1 +1,29 @@
 @import "./base/_base.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Oswald", sans-serif;
+  
+    ::-webkit-scrollbar {
+      width: 17px;
+      height: 17px;
+      background-color: #171c27;
+    }
+    ::-webkit-scrollbar-thumb {
+      border: solid 8px #171c27;
+      background-color: rgb(141, 232, 206);
+    }
+    ::-webkit-scrollbar-corner {
+      background-color: #171c27;
+    }
+  
+}

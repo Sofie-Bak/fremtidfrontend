@@ -1,8 +1,9 @@
 import GlowBtn from "../glowBtn/GlowBtn";
 import styles from "./glowCards.module.css";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-const GlowCards = ({ title, content }) => {
+
+const GlowCards = ({ title, content, buttonLink }) => {
   return (
     <section className="flex items-center justify-center relative">
       <div className="absolute">
@@ -11,8 +12,8 @@ const GlowCards = ({ title, content }) => {
           <div className={styles.cardContent}>
             <h2>{title}</h2>
             <p>{content}</p>
-            <Link to={"/"}>
-                <GlowBtn/>
+            <Link to={buttonLink}>
+              <GlowBtn />
             </Link>
           </div>
         </div>

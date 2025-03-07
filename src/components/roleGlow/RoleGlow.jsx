@@ -46,7 +46,7 @@ const RoleGlow = () => {
 
   return (
     <>
-      <header></header>
+      <div className={styles.header}></div>
       <div className={styles.backgroundOverlay}>
         <div className={styles.cardGlow} ref={wrapperRef}>
           <div className={styles.card}>

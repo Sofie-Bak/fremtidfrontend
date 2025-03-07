@@ -4,7 +4,7 @@ html {
   overflow-y: auto;
 }
 
-header {
+.header {
   height: 160px;
   width: 100%;
   position: fixed;
@@ -15,7 +15,7 @@ header {
   mask: linear-gradient(to bottom, black 20%, rgba(0, 0, 0, 0));
   z-index: 30;
 }
-header:after {
+.header:after {
   content: "";
   position: absolute;
   top: -20px;

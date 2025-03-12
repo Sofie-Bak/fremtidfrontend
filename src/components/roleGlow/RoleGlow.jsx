@@ -5,12 +5,9 @@ const RoleGlow = () => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    // Target the wrapper element using your CSS class name for card-glow.
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    // Since you're using CSS modules, make sure to query the correct class name.
-    // This assumes that styles.card corresponds to your ".card" class.
     const cards = wrapper.querySelectorAll(`.${styles.card}`);
 
     // Attach event listener to the wrapper for mouse movement
@@ -18,15 +15,15 @@ const RoleGlow = () => {
       cards.forEach((card) => {
         const rect = card.getBoundingClientRect();
 
-        // Calculate x/y for glow effect
+        // x/y for glow effect
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
 
-        // Set glow effect properties
+        // glow effect properties
         card.style.setProperty("--x", `${mouseX}px`);
         card.style.setProperty("--y", `${mouseY}px`);
 
-        // Calculate angle for rotation or gradient adjustment
+        //  angle for rotation or gradient adjustment
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const angle =
@@ -56,13 +53,17 @@ const RoleGlow = () => {
               </h2>
               <p>
                 En af de mest markante måder, hvorpå AI påvirker webudvikling i
-                dag, er gennem automatisering af rutineopgaver. AI-værktøjer som
-                GitHub Copilot og Tabnine hjælper udviklere med at skrive kode
-                hurtigere og mere præcist ved at foreslå kode i realtid. Disse
-                værktøjer anvender maskinlæring og store datasæt af eksisterende
-                kode til at lære og forudsige, hvilken kode en udvikler muligvis
-                ønsker at skrive næste gang.
+                dag, er gennem automatisering af rutineopgaver. AI-værktøjer som  "
+                <a href="https://github.com/features/copilot">
+                  GitHub Copilot
+                </a> 
+                 " og Tabnine hjælper udviklere med at skrive kode hurtigere og
+                mere præcist ved at foreslå kode i realtid. Disse værktøjer
+                anvender maskinlæring og store datasæt af eksisterende kode til
+                at lære og forudsige, hvilken kode en udvikler muligvis ønsker
+                at skrive næste gang.
               </p>
+              <br />
               <p>
                 AI kan også hjælpe med at automatisere testprocesser. I stedet
                 for at bruge tid på manuel fejlfinding og testning, kan
@@ -72,9 +73,9 @@ const RoleGlow = () => {
                 på de kreative og komplekse opgaver, som AI ikke kan håndtere på
                 samme niveau.
               </p>
-            </div>
+            
 
-            <div className={styles.cardBody}>
+            
               <h2 className="uppercase tracking-wider font-light">
                 Forbedring af Brugeroplevelsen (UX/UI)
               </h2>
@@ -87,7 +88,8 @@ const RoleGlow = () => {
                 interaktive og hjælper brugerne med at få svar på deres
                 spørgsmål hurtigt, uden at de behøver at vente på en
                 kundeservice-agent.
-              </p>
+              </p>{" "}
+              <br />
               <p>
                 Derudover kan AI hjælpe med at forbedre design og layout på
                 websites. AI-værktøjer som Wix's ADI (Artificial Design
@@ -95,7 +97,8 @@ const RoleGlow = () => {
                 webdesigns, der passer til den enkelte brugers behov. Dette gør
                 det lettere for både designere og udviklere at skabe
                 professionelt udseende websites på kort tid.
-              </p>
+              </p>{" "}
+              <br />
               <p>
                 AI kan også bruges til at analysere data og bruge den viden til
                 at tilpasse indholdet på en hjemmeside i realtid. Hvis et
@@ -104,8 +107,7 @@ const RoleGlow = () => {
                 anbefalinger. Dette skaber en mere personlig og engagerende
                 brugeroplevelse.
               </p>
-            </div>
-            <div className={styles.cardBody}>
+            
               <h2 className="uppercase tracking-wider font-light">
                 AI og SEO (Search Engine Optimization)
               </h2>
@@ -116,7 +118,8 @@ const RoleGlow = () => {
                 mere målrettet og effektivt. AI kan forudsige, hvilke søgeord
                 der vil generere mest trafik, og kan optimere indholdet
                 derefter.
-              </p>
+              </p>{" "}
+              <br />
               <p>
                 Desuden hjælper AI med at forstå søgemaskinernes algoritmer.
                 AI-værktøjer som Clearscope og Surfer SEO bruger maskinlæring

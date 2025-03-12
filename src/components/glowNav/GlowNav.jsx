@@ -12,7 +12,7 @@ const GlowNav = () => {
               smooth={true}
               duration={500}
               className={styles.btn}
-              containerId="scroll-container" // This ensures scrolling happens inside the container
+              containerId="scroll-container" // container id to make sure react scroll knows where to scroll. 
             >
               AI's rolle
             </Link>
@@ -43,26 +43,6 @@ const GlowNav = () => {
             >
               Fremtiden
             </Link>
-  
-            {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 400 60"
-                height="60"
-                width="400"
-                overflow="visible"
-                className={styles.outline}
-              >
-                <rect
-                  strokeWidth="5"
-                  fill="transparent"
-                  height="60"
-                  width="400"
-                  y="0"
-                  x="0"
-                  pathLength="100"
-                  className={styles.rect}
-                ></rect>
-              </svg> */}
   
             <div className={styles.containerStars}></div>
   

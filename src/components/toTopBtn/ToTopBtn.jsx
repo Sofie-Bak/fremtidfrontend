@@ -5,10 +5,10 @@ const ToTopBtn = () => {
     const container = document.getElementById("scroll-container");
 
     if (container) {
-      // If the scroll container exists, scroll it
+      // If the scroll container exists scroll it
       container.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Otherwise, fallback to default react-scroll behavior
+      // Otherwise default react-scroll behavior
       scroll.scrollToTop({ duration: 500, smooth: "easeInOutQuart" });
     }
   };

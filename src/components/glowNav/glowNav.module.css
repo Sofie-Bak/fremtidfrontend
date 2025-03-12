@@ -16,7 +16,7 @@
 
 .nav {
   position: relative;
-  width: 510px;
+  width: clamp(21.25rem, 10.932vw + 18.756rem, 31.875rem);
   height: 60px;
   margin-top: 1em;
 }
@@ -60,6 +60,7 @@
   letter-spacing: 2px;
   font-weight: 100;
   cursor: pointer;
+  font-size: clamp(0.625rem, 0.386vw + 0.537rem, 1rem);
   transition: 0.1s;
 }
 

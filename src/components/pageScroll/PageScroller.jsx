@@ -4,6 +4,8 @@ import styles from "./pageScroller.module.css";
 import GlowCards from "../glowCards/GlowCards";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import Footer from "../footer/Footer";
+
 
 const PageScroller = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,25 +14,26 @@ const PageScroller = () => {
   const sections = [
     {
       title: "AI's rolle i webudvikling i dag",
-      content: "Here's the text you want to display for section 1.",
+      content:
+        "I dag er AI allerede en vigtig del af webudvikling, selvom mange måske ikke er opmærksomme på det.",
       buttonLink: "/aiRole",
     },
     {
       title: "Fordele ved AI for webudviklere",
       content:
-        "Content for Section 2. Here's the text you want to display for section 2.",
+        "En af de største fordele ved AI i webudvikling er, at det kan automatisere en række tidskrævende opgaver.",
       buttonLink: "/page2",
     },
     {
       title: "Ulemper ved AI i webudvikling",
       content:
-        "Content for Section 3. Here's the text you want to display for section 3.",
+        "Selvom AI tilbyder mange fordele, er der også nogle ulemper ved at implementere teknologien i webudvikling.",
       buttonLink: "/page3",
     },
     {
       title: "Hvordan AI kan ændre webudvikling i fremtiden",
       content:
-        "Content for Section 4. Here's the text you want to display for section 4.",
+        "I fremtiden er det sandsynligt, at AI vil spille en endnu større rolle i webudvikling.",
       buttonLink: "/page4",
     },
   ];
@@ -140,6 +143,7 @@ const PageScroller = () => {
           </div>
         </Element>
       ))}
+      <Footer/>
     </div>
   );
 };

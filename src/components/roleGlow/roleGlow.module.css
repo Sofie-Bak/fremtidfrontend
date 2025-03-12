@@ -67,10 +67,11 @@ html {
   h2 {
     font-size: larger;
     margin-bottom: 1em;
+    margin-top: 1em;
   }
   p {
     font-weight: 100;
-    width: 780px;
+    width: clamp(16.875rem, 32.797vw + 9.393rem, 48.75rem);
     letter-spacing: 1px;
     font-size: clamp(0.625rem, 0.518vw + 0.504rem, 1.125rem);
   }
@@ -162,7 +163,7 @@ html {
 .backgroundOverlay {
   position: relative;
   width: 100%;
-  height: 150vh;
+  height: 1300px;
   background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10vw);
   z-index: 0;
